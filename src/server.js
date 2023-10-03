@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express(); //initialize express app
-const userRoute = require('./routes/User');
+const userRoute = require('./routes/user');
 const port = 3000; //port
 
 app.use(express.json()) //allow express to parse json data
@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
 })
 
+app.get("/search/:key",(req, res) => {
+    console.log(req.params.key);
+    res.send("searchDone");
+})
 
 //user routes
 app.use('/user', userRoute);

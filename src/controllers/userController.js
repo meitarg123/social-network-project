@@ -47,6 +47,8 @@ const signup = async (req, res) => {
         }
 }
 
+
+
 module.exports = {
     user_index,
     login,
