@@ -4,12 +4,11 @@ const userRoute = require('./routes/User');
 const port = 3000; //port
 
 app.use(express.json()) //allow express to parse json data
-//const users = []  //temp database
+app.set('view engine', 'ejs')
 
 
 app.get('/', (req, res) => {
-    console.log('Entered website!');
-    res.send("Welcome");
+    res.render('index.ejs');
 })
 
 
