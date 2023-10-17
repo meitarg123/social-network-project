@@ -23,5 +23,3 @@ Content-Type: application/json
     "userName": "Meitargo",
     "password": "password"
 }
-
-//GET http://localhost:3000/search/Meitargo

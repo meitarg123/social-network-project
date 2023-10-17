@@ -1,17 +1,18 @@
 const express = require('express');
-const userController = require ('../controllers/userController');
+const controller = require('../controllers/UserController');
+
 const router = express.Router();
 
+router.get('/', controller.user_index);
 router.get('/login', (req,res) => {
+    console.log("Received a request for /user/login");
     res.render('login.ejs');
 });
 router.get('/signup', (req,res) => {
+    console.log("Received a request for /user/signup");
     res.render('signup.ejs');
 });
-router.get('/', userController.user_index);
-router.post('/signup', userController.signup)
-router.post('/login',  userController.login)
-
-
+router.post('/login',  controller.login);
+router.post('/signup', controller.signup);
 
 module.exports = router;

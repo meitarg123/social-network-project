@@ -1,10 +1,9 @@
 const bcrypt = require('bcrypt')
 
-const users = []  //temp database
-
+const users = []
 
 const user_index = (req, res) => {
-   // res.send("Users");
+    console.log("Received a request for user_index");
     res.json(users);
 }
 
@@ -46,8 +45,6 @@ const signup = async (req, res) => {
             res.status(500).send();
         }
 }
-
-
 
 module.exports = {
     user_index,
